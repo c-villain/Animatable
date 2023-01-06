@@ -231,7 +231,7 @@ struct DemoView: View {
                                 .frame(width: 24, height: 24)
                                 .foregroundColor(.white)
                             
-                            Text(explosive ? "On" : "Off")
+                            Text(doubleExplosive ? "On" : "Off")
                                 .font(.body)
                                 .fontWeight(.medium)
                                 .foregroundColor(.white)
