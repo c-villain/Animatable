@@ -26,7 +26,7 @@ struct DemoView: View {
             
             VStack {
                 Group {
-                    Text("Single animations demo ⬇️")
+                    Text("Single animations ⬇️")
                         .font(.title)
                     
                     Button {
@@ -182,7 +182,7 @@ struct DemoView: View {
                 }
                 
                 Group {
-                    Text("Combined animations demo ⬇️")
+                    Text("Combined animations ⬇️")
                         .font(.title)
                     
                     Button {
