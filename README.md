@@ -282,6 +282,7 @@ Button {
 }
   ```
   </details>
+  
 ## Communication
 
 - If you **found a bug**, open an issue or submit a fix via a pull request.
