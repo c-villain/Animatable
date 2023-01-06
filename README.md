@@ -12,7 +12,7 @@
 Yet another animation modifiers for buttons on SwiftUI.
 
 <p align="left">
-  <img src="demos/quick_single.gif" alt="" width="300">
+  <img src="Gifs/quick_single.gif" alt="" width="300">
   </p>
   
 👨🏻‍💻 Feel free to subscribe to channel **[SwiftUI dev](https://t.me/swiftui_dev)** in telegram.
