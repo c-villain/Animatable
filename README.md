@@ -49,6 +49,10 @@ targets:
 
 ## Quick start
 
+There are different custom animation types provided by `Animatable`. 
+
+👇🏻 Tap on its name to see description and example of using.
+
 <details>
   <summary>Live comments effect</summary>
 
@@ -277,6 +281,54 @@ Button {
     .background(
         Rectangle()
             .fill(.blue.opacity(0.8))
+            .cornerRadius(12)
+    )
+}
+  ```
+  </details>
+  
+  
+  👇🏻 You can easily join them together to combine animation.
+  
+  <details>
+  <summary>Combining animation</summary>
+  
+  <p align="left">
+<img src="Gifs/combined.gif" alt="combined">
+</p>
+
+Use `.animate(.fireworks(color:),animate:)` where `color` is color of animation, `animate` is flag to start animation.
+
+  ```swift
+  @State var animate: Bool = false
+...
+Button {
+    animate.toggle()
+} label: {
+    HStack(spacing: 8)  {
+        Image(systemName: animate ? "sun.max.fill" : "sun.max")
+            .resizable()
+            .scaledToFit()
+            .animate(.rotating,
+                     animate: animate)
+            .animate(.explosive(color: .red, factor: 2.0),
+                     animate: animate)
+            .animate(.explosive(color: .blue, factor: 1.4),
+                     animate: animate)
+            .animate(.fireworks(color: .yellow, factor: 3.5),
+                     animate: animate)
+            .frame(width: 24, height: 24)
+            .foregroundColor(.red)
+
+        Text("Combined")
+            .font(.body)
+            .fontWeight(.medium)
+            .foregroundColor(.white)
+    }
+    .padding(12)
+    .background(
+        Rectangle()
+            .fill(.blue.opacity(0.6))
             .cornerRadius(12)
     )
 }
