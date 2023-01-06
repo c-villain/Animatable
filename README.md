@@ -297,7 +297,7 @@ Button {
 <img src="Gifs/combined.gif" alt="combined">
 </p>
 
-Use `.animate(.fireworks(color:),animate:)` where `color` is color of animation, `animate` is flag to start animation.
+Use sequence of `.animate(type:,animate:)` to get multiple animation effect.
 
   ```swift
   @State var animate: Bool = false
