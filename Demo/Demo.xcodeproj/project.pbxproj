@@ -7,21 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A06E6A2296866A600E4F92F /* Animatable in Frameworks */ = {isa = PBXBuildFile; productRef = 5A06E6A1296866A600E4F92F /* Animatable */; };
 		5A8BE84029670F03009D805B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8BE83F29670F03009D805B /* AppDelegate.swift */; };
 		5A8BE84229670F03009D805B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8BE84129670F03009D805B /* SceneDelegate.swift */; };
 		5A8BE84929670F04009D805B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A8BE84829670F04009D805B /* Assets.xcassets */; };
 		5A8BE85429670F73009D805B /* DemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8BE85329670F73009D805B /* DemoView.swift */; };
-		5A8BE85B29672813009D805B /* Animatable in Frameworks */ = {isa = PBXBuildFile; productRef = 5A8BE85A29672813009D805B /* Animatable */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5A06E6A02968669900E4F92F /* Animatable */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Animatable; path = ..; sourceTree = "<group>"; };
 		5A8BE83C29670F03009D805B /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A8BE83F29670F03009D805B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5A8BE84129670F03009D805B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		5A8BE84829670F04009D805B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5A8BE84D29670F04009D805B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A8BE85329670F73009D805B /* DemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoView.swift; sourceTree = "<group>"; };
-		5A8BE858296727FE009D805B /* Animatable */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Animatable; path = ../Animatable; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +29,25 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A8BE85B29672813009D805B /* Animatable in Frameworks */,
+				5A06E6A2296866A600E4F92F /* Animatable in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5A06E69F2968669900E4F92F /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				5A06E6A02968669900E4F92F /* Animatable */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
 		5A8BE83329670F03009D805B = {
 			isa = PBXGroup;
 			children = (
-				5A8BE857296727FE009D805B /* Packages */,
+				5A06E69F2968669900E4F92F /* Packages */,
 				5A8BE83E29670F03009D805B /* Demo */,
 				5A8BE83D29670F03009D805B /* Products */,
 				5A8BE85929672813009D805B /* Frameworks */,
@@ -66,14 +74,6 @@
 			path = Demo;
 			sourceTree = "<group>";
 		};
-		5A8BE857296727FE009D805B /* Packages */ = {
-			isa = PBXGroup;
-			children = (
-				5A8BE858296727FE009D805B /* Animatable */,
-			);
-			name = Packages;
-			sourceTree = "<group>";
-		};
 		5A8BE85929672813009D805B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -98,7 +98,7 @@
 			);
 			name = Demo;
 			packageProductDependencies = (
-				5A8BE85A29672813009D805B /* Animatable */,
+				5A06E6A1296866A600E4F92F /* Animatable */,
 			);
 			productName = Demo;
 			productReference = 5A8BE83C29670F03009D805B /* Demo.app */;
@@ -358,7 +358,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		5A8BE85A29672813009D805B /* Animatable */ = {
+		5A06E6A1296866A600E4F92F /* Animatable */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Animatable;
 		};
