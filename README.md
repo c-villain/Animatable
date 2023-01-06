@@ -49,7 +49,9 @@ targets:
 
 ## Quick start
 
-There are different custom animation types provided by `Animatable`. 
+All examples you can find in demo project inside package.
+
+There are different custom animation types provided by `Animatable`.
 
 👇🏻 Tap on its name to see description and example of using.
 
