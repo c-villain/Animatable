@@ -47,7 +47,121 @@ targets:
        - package: Animatable
 ```
 
-## Types
+## Quick start
 
-- live comments
+<details>
+  <summary>Live comments effect</summary>
 
+<p align="left">
+<img src="Gifs/liveComments.gif" alt="live comments">
+</p>
+
+Use `.animate(.liveComments(stamps:),animate:)` where `stamps` is number of prints in animation activity, `animate` is flag to start animation.
+                     
+```swift
+@State var animate: Bool = false
+...
+Button {
+    animate.toggle()
+} label: {
+    HStack(spacing: 8)  {
+        Image(systemName: animate ? "heart.fill" : "heart")
+            .resizable()
+            .scaledToFit()
+            .animate(.liveComments(stamps: 4),
+                     animate: animate)
+            .frame(width: 24, height: 24)
+            .foregroundColor(.white)
+
+        Text("Like")
+            .font(.body)
+            .fontWeight(.medium)
+            .foregroundColor(.white)
+    }
+    .padding(12)
+    .background(
+        Rectangle()
+            .fill(.pink.opacity(0.8))
+            .cornerRadius(12)
+    )
+}
+```
+</details>
+
+<details>
+  <summary>Explosion effect</summary>
+  
+  <p align="left">
+<img src="Gifs/explosion.gif" alt="explosion">
+</p>
+
+Use `.animate(.explosive(color:),animate:)` where `color` is color of explosion in animation activity, `animate` is flag to start animation.
+
+  ```swift
+  @State var animate: Bool = false
+...
+  Button {
+    animate.toggle()
+} label: {
+    HStack(spacing: 8)  {
+        Image(systemName: animate ? "power" : "poweroff")
+            .resizable()
+            .scaledToFit()
+            .animate(.explosive(color: .white),
+                     animate: animate)
+            .frame(width: 24, height: 24)
+            .foregroundColor(.white)
+
+        Text(animate ? "On" : "Off")
+            .font(.body)
+            .fontWeight(.medium)
+            .foregroundColor(.white)
+    }
+    .padding(12)
+    .background(
+        Rectangle()
+            .fill(.gray.opacity(0.8))
+            .cornerRadius(12)
+    )
+}
+  ```
+  </details>
+  
+  <details>
+  <summary>Tweak effect</summary>
+  
+  <p align="left">
+<img src="Gifs/tweak.gif" alt="tweak">
+</p>
+
+Use `.animate(.tweaking(amount:,shakesPerUnit:),animate:)` where `amount` is tweak offset, `shakesPerUnit` is number of shakes in tweking, `animate` is flag to start animation.
+
+  ```swift
+  @State var animate: Bool = false
+...
+Button {
+    animate.toggle()
+} label: {
+    HStack(spacing: 8)  {
+        Image(systemName: animate ? "hand.thumbsup.fill" : "hand.thumbsup")
+            .resizable()
+            .scaledToFit()
+            .animate(.tweaking(),
+                     animate: animate)
+            .frame(width: 24, height: 24)
+            .foregroundColor(.white)
+
+        Text("Like")
+            .font(.body)
+            .fontWeight(.medium)
+            .foregroundColor(.white)
+    }
+    .padding(12)
+    .background(
+        Rectangle()
+            .fill(.blue.opacity(0.8))
+            .cornerRadius(12)
+    )
+}
+  ```
+  </details>
