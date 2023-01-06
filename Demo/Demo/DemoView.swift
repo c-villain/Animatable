@@ -338,3 +338,9 @@ struct DemoView: View {
         .edgesIgnoringSafeArea(.all)
     }
 }
+
+struct DemoView_PreviewProvider: PreviewProvider {
+    static var previews: some View {
+        DemoView()
+    }
+}
