@@ -439,6 +439,48 @@ The result:
 
 </details>
 
+  <details>
+  <summary>in group of views</summary>
+
+Use can use `.animate(...)` not only for one view but for group of views
+
+  ```swift
+  @State var animate: Bool = false
+...
+Button {
+    animate.toggle()
+} label: {
+    HStack(spacing: 8)  {
+        Image(systemName: animate ? "heart.fill" : "heart")
+            .resizable()
+            .scaledToFit()
+            .frame(width: 24, height: 24)
+            .foregroundColor(.red)
+
+        Text("Like")
+            .font(.body)
+            .fontWeight(.medium)
+            .foregroundColor(.red)
+    }
+    .animate(.liveComments(stamps: 4), // <== Look here!
+             animate: animate)
+    .padding(12)
+    .background(
+        Rectangle()
+            .fill(.blue.opacity(0.8))
+            .cornerRadius(12)
+    )
+}
+  ```
+  
+  The result:
+  
+   <p align="left">
+<img src="Gifs/example1.gif" alt="example1">
+</p>
+
+  </details>
+
 ## Communication
 
 - If you **found a bug**, open an issue or submit a fix via a pull request.
