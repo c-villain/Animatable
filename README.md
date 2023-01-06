@@ -165,3 +165,82 @@ Button {
 }
   ```
   </details>
+  
+  <details>
+  <summary>Scaling effect</summary>
+  
+  <p align="left">
+<img src="Gifs/scaling.gif" alt="scaling">
+</p>
+
+Use `.animate(.scaling(scaling:),animate:)` where `scaling` is scaling factor, `animate` is flag to start animation.
+
+  ```swift
+  @State var animate: Bool = false
+...
+ Button {
+    animate.toggle()
+} label: {
+    HStack(spacing: 8)  {
+        Image(systemName: animate ? "plus.app.fill" : "plus.app")
+            .resizable()
+            .scaledToFit()
+            .animate(.scaling(),
+                     animate: animate)
+            .frame(width: 24, height: 24)
+            .foregroundColor(.white)
+
+        Text("Add")
+            .font(.body)
+            .fontWeight(.medium)
+            .foregroundColor(.white)
+    }
+    .padding(12)
+    .background(
+        Rectangle()
+            .fill(.yellow.opacity(0.8))
+            .cornerRadius(12)
+    )
+}
+  ```
+  </details>
+  
+    <details>
+  <summary>Rotating effect</summary>
+  
+  <p align="left">
+<img src="Gifs/rotating.gif" alt="scaling">
+</p>
+
+Use `.animate(.rotating,animate:)` where `animate` is flag to start animation.
+
+  ```swift
+  @State var animate: Bool = false
+...
+Button {
+    animate.toggle()
+} label: {
+    HStack(spacing: 8)  {
+        Image(systemName: animate ? "arrow.triangle.2.circlepath.circle.fill" : "arrow.triangle.2.circlepath.circle")
+            .resizable()
+            .scaledToFit()
+            .animate(.rotating,
+                     animate: animate)
+            .frame(width: 24, height: 24)
+            .foregroundColor(.white)
+
+        Text("Sync")
+            .font(.body)
+            .fontWeight(.medium)
+            .foregroundColor(.white)
+    }
+    .padding(12)
+    .background(
+        Rectangle()
+            .fill(.blue.opacity(0.8))
+            .cornerRadius(12)
+    )
+}
+  ```
+  </details>
+ 
