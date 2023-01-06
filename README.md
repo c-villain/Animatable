@@ -244,6 +244,44 @@ Button {
   ```
   </details>
  
+<details>
+  <summary>Fireworks effect</summary>
+  
+  <p align="left">
+<img src="Gifs/fireworks.gif" alt="fireworks">
+</p>
+
+Use `.animate(.fireworks(color:),animate:)` where `color` is color of animation, `animate` is flag to start animation.
+
+  ```swift
+  @State var animate: Bool = false
+...
+Button {
+    animate.toggle()
+} label: {
+    HStack(spacing: 8)  {
+        Image(systemName: animate ? "sun.max.fill" : "sun.max")
+            .resizable()
+            .scaledToFit()
+            .animate(.fireworks(color: .white),
+                     animate: animate)
+            .frame(width: 24, height: 24)
+            .foregroundColor(.white)
+
+        Text("Weather")
+            .font(.body)
+            .fontWeight(.medium)
+            .foregroundColor(.white)
+    }
+    .padding(12)
+    .background(
+        Rectangle()
+            .fill(.blue.opacity(0.8))
+            .cornerRadius(12)
+    )
+}
+  ```
+  </details>
 ## Communication
 
 - If you **found a bug**, open an issue or submit a fix via a pull request.
