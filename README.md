@@ -14,7 +14,9 @@ Yet another animation modifiers for buttons on SwiftUI.
 <p align="left">
   <img src="Gifs/quick_single.gif" alt="" width="300">
   </p>
-  
+
+🔍 Full demo video you can find [here](https://t.me/swiftui_dev/222).
+    
 👨🏻‍💻 Feel free to subscribe to channel **[SwiftUI dev](https://t.me/swiftui_dev)** in telegram.
 
 ## Requirements
