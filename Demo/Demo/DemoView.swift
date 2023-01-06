@@ -39,7 +39,7 @@ struct DemoView: View {
                                 .animate(.liveComments(stamps: 4),
                                          animate: liveComments)
                                 .frame(width: 24, height: 24)
-                                .foregroundColor(.white)
+                                .foregroundColor(.red)
                             
                             Text("Like")
                                 .font(.body)
@@ -49,7 +49,7 @@ struct DemoView: View {
                         .padding(12)
                         .background(
                             Rectangle()
-                                .fill(.pink.opacity(0.8))
+                                .fill(.blue.opacity(0.8))
                                 .cornerRadius(12)
                         )
                     }
@@ -99,7 +99,7 @@ struct DemoView: View {
                         .padding(12)
                         .background(
                             Rectangle()
-                                .fill(.blue.opacity(0.8))
+                                .fill(.pink.opacity(0.8))
                                 .cornerRadius(12)
                         )
                     }
@@ -197,7 +197,7 @@ struct DemoView: View {
                                 .animate(.liveComments(stamps: 4),
                                          animate: liveCommentsAndScale)
                                 .frame(width: 24, height: 24)
-                                .foregroundColor(.white)
+                                .foregroundColor(.red)
                             
                             Text("Like")
                                 .font(.body)
@@ -207,7 +207,7 @@ struct DemoView: View {
                         .padding(12)
                         .background(
                             Rectangle()
-                                .fill(.pink.opacity(0.8))
+                                .fill(.blue.opacity(0.8))
                                 .cornerRadius(12)
                         )
                     }
@@ -266,7 +266,7 @@ struct DemoView: View {
                         .padding(12)
                         .background(
                             Rectangle()
-                                .fill(.blue.opacity(0.8))
+                                .fill(.pink.opacity(0.8))
                                 .cornerRadius(12)
                         )
                     }
