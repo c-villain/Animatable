@@ -205,7 +205,7 @@ Use `.animate(.scaling(scaling:),animate:)` where `scaling` is scaling factor, `
   ```
   </details>
   
-    <details>
+<details>
   <summary>Rotating effect</summary>
   
   <p align="left">
