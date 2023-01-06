@@ -9,7 +9,7 @@
 [![contact: @lexkraev](https://img.shields.io/badge/contact-%40lexkraev-blue.svg?style=flat)](https://t.me/lexkraev)
 [![Telegram Group](https://img.shields.io/endpoint?color=neon&style=flat-square&url=https%3A%2F%2Ftg.sumanjay.workers.dev%2Fswiftui_dev)](https://telegram.dog/swiftui_dev)
 
-Yet another animation modifiers on SwiftUI.
+Yet another animation modifiers for buttons on SwiftUI.
 
 👨🏻‍💻 Feel free to subscribe to channel **[SwiftUI dev](https://t.me/swiftui_dev)** in telegram.
 
@@ -17,4 +17,37 @@ Yet another animation modifiers on SwiftUI.
 
 - iOS 13.0 or macOS 10.15
 
+## Installation
+
+#### Swift Package Manager
+
+To integrate ```Animatable``` into your project using SwiftPM add the following to your `Package.swift`:
+
+```swift
+dependencies: [
+    .package(url: "https://github.com/c-villain/Animatable", from: "0.1.0"),
+],
+```
+or via [XcodeGen](https://github.com/yonaskolb/XcodeGen) insert into your `project.yml`:
+
+```yaml
+name: YourProjectName
+options:
+  deploymentTarget:
+    iOS: 13.0
+packages:
+  Animatable:
+    url: https://github.com/c-villain/Animatable
+    from: 0.1.0
+targets:
+  YourTarget:
+    type: application
+    ...
+    dependencies:
+       - package: Animatable
+```
+
+## Types
+
+- live comments
 
