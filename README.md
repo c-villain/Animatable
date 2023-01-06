@@ -341,6 +341,104 @@ Button {
   ```
   </details>
   
+### Recommendations for use
+
+<details>
+  <summary>in combining animation</summary>
+  
+  Order in sequence of `.animate(type:,animate:)` is really important!
+  
+  Feel the difference in the next example:
+
+```swift
+@State var animate: Bool = false
+...
+ Button {
+    animate.toggle()
+} label: {
+    HStack(spacing: 8)  {
+        Image(systemName: multiple ? "sun.max.fill" : "sun.max")
+            .resizable()
+            .scaledToFit()
+            .animate(.liveComments(stamps: 4),
+                     animate: animate)
+            .animate(.rotating,
+                     animate: animate)
+            .animate(.explosive(color: .red, factor: 2.0),
+                     animate: animate)
+            .animate(.explosive(color: .blue, factor: 1.4),
+                     animate: animate)
+            .animate(.fireworks(color: .yellow, factor: 3.0),
+                     animate: animate)
+            .frame(width: 24, height: 24)
+            .foregroundColor(.red)
+
+        Text("Weather")
+            .font(.body)
+            .fontWeight(.medium)
+            .foregroundColor(.white)
+    }
+    .padding(12)
+    .background(
+        Rectangle()
+            .fill(.blue.opacity(0.6))
+            .cornerRadius(12)
+    )
+}
+```
+
+Using this sequence of `.animate(...)` leads to such behaviour:
+
+  <p align="left">
+<img src="Gifs/error1.gif" alt="erro1">
+</p>
+
+To get expected behaviour this we should change the order in chain:
+
+```swift
+@State var animate: Bool = false
+...
+ Button {
+    animate.toggle()
+} label: {
+    HStack(spacing: 8)  {
+        Image(systemName: multiple ? "sun.max.fill" : "sun.max")
+            .resizable()
+            .scaledToFit()
+            .animate(.rotating,                // <== Look here!
+                     animate: animate)
+            .animate(.liveComments(stamps: 4), // <== Look here!
+                     animate: animate)
+            .animate(.explosive(color: .red, factor: 2.0),
+                     animate: animate)
+            .animate(.explosive(color: .blue, factor: 1.4),
+                     animate: animate)
+            .animate(.fireworks(color: .yellow, factor: 3.0),
+                     animate: animate)
+            .frame(width: 24, height: 24)
+            .foregroundColor(.red)
+
+        Text("Weather")
+            .font(.body)
+            .fontWeight(.medium)
+            .foregroundColor(.white)
+    }
+    .padding(12)
+    .background(
+        Rectangle()
+            .fill(.blue.opacity(0.6))
+            .cornerRadius(12)
+    )
+}
+```
+The result:
+
+  <p align="left">
+<img src="Gifs/fix1.gif" alt="erro1">
+</p>
+
+</details>
+
 ## Communication
 
 - If you **found a bug**, open an issue or submit a fix via a pull request.
