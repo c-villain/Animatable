@@ -346,7 +346,7 @@ Button {
 ### Recommendations for use
 
 <details>
-  <summary>in combining animation</summary>
+  <summary>with combining animation</summary>
   
   Order in sequence of `.animate(type:,animate:)` is really important!
   
@@ -392,7 +392,7 @@ Button {
 Using this sequence of `.animate(...)` leads to such behaviour:
 
   <p align="left">
-<img src="Gifs/error1.gif" alt="erro1">
+<img src="Gifs/problem1.gif" alt="problem1">
 </p>
 
 To get expected behaviour this we should change the order in chain:
@@ -442,7 +442,7 @@ The result:
 </details>
 
   <details>
-  <summary>in group of views</summary>
+  <summary>with group of views</summary>
 
 Use can use `.animate(...)` not only for one view but for group of views
 
@@ -481,6 +481,61 @@ Button {
 <img src="Gifs/example1.gif" alt="example1">
 </p>
 
+  </details>
+
+</details>
+
+  <details>
+  <summary>with standart SUI modifiers</summary>
+
+Be careful with standard SUI modifiers. It may cause different side effects.
+
+For example [`cornerRadius`](https://developer.apple.com/documentation/quartzcore/calayer/1410818-cornerradius) crops the modified view. 
+
+  ```swift
+  @State var animate: Bool = false
+...
+Button {
+    animate.toggle()
+} label: {
+    HStack(spacing: 8)  {
+        Image(systemName: liveComments ? "heart.fill" : "heart")
+            .resizable()
+            .scaledToFit()
+            .animate(.liveComments(stamps: 4),
+                     animate: animate)
+            .frame(width: 24, height: 24)
+            .foregroundColor(.red)
+
+        Text("Like")
+            .font(.body)
+            .fontWeight(.medium)
+            .foregroundColor(.white)
+    }
+    .padding(12)
+    .background (
+        Color.blue.opacity(0.8)
+    )
+    .cornerRadius(12) // <== Look here!
+}
+  ```
+  
+  The result:
+  
+   <p align="left">
+<img src="Gifs/problem2.gif" alt="problem2">
+</p>
+
+I recommend you to use it in the `.background` to get expected behaviour:
+
+  ```swift
+.background ( // <== Look here
+    Rectangle()
+        .fill(.blue.opacity(0.8))
+        .cornerRadius(12) // <== Look here
+)
+  ```
+  
   </details>
 
 ## Communication
