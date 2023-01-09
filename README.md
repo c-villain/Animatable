@@ -1,4 +1,4 @@
-# Animatable
+# Animatable 
 
 [![Latest release](https://img.shields.io/github/v/release/c-villain/Animatable?color=brightgreen&label=version)](https://github.com/c-villain/Animatable/releases/latest)
 [![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fc-villain%2FAnimatable%2Fbadge%3Ftype%3Dswift-versions)](https://swiftpackageindex.com/c-villain/Animatable)
@@ -540,6 +540,7 @@ I recommend you to use it in the `.background` to get expected behaviour:
 
 ## Communication
 
+- If you like this repository, please do :star: to make this useful for others.
 - If you **found a bug**, open an issue or submit a fix via a pull request.
 - If you **have a feature request**, open an issue or submit a implementation via a pull request or hit me up on **lexkraev@gmail.com** or **[telegram](https://t.me/lexkraev)**.
 - If you **want to contribute**, submit a pull request onto the master branch.
