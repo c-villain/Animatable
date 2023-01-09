@@ -343,7 +343,7 @@ Button {
   ```
   </details>
   
-### Recommendations for use
+### ⚠️ Recommendations for use
 
 <details>
   <summary>with combining animation</summary>
