@@ -9,7 +9,7 @@
 [![contact: @lexkraev](https://img.shields.io/badge/contact-%40lexkraev-blue.svg?style=flat)](https://t.me/lexkraev)
 [![Telegram Group](https://img.shields.io/endpoint?color=neon&style=flat-square&url=https%3A%2F%2Ftg.sumanjay.workers.dev%2Fswiftui_dev)](https://telegram.dog/swiftui_dev)
 
-Yet another animation modifiers for buttons on pure SwiftUI.
+Yet another animation modifiers for buttons, skeletons and other views on pure SwiftUI.
 
 <p align="left">
   <img src="Gifs/quick_single.gif" alt="" width="300">
