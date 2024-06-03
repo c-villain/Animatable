@@ -19,323 +19,428 @@ struct DemoView: View {
     @State var multiple: Bool = false
     
     var body: some View {
+        
+        TabView {
+            animations
+                .tabItem {
+                    Image(systemName: "lightbulb.min")
+                    Text("Animations")
+                }
+            
+            forSkeletons
+                .tabItem {
+                    Image(systemName: "rectangle.fill")
+                    Text("Skeletons")
+                }
+        }
+    }
     
+    var animations: some View {
         ZStack {
             Color.green.opacity(0.2)
                 .zIndex(1)
             
-            VStack {
-                Group {
-                    Text("Single animations ⬇️")
-                        .font(.title)
-                    
-                    Button {
-                        liveComments.toggle()
-                    } label: {
-                        HStack(spacing: 8)  {
-                            Image(systemName: liveComments ? "heart.fill" : "heart")
-                                .resizable()
-                                .scaledToFit()
-                                .animate(.liveComments(stamps: 4),
-                                         animate: liveComments)
-                                .frame(width: 24, height: 24)
-                                .foregroundColor(.red)
-                            
-                            Text("Like")
-                                .font(.body)
-                                .fontWeight(.medium)
-                                .foregroundColor(.white)
+            ScrollView {
+                VStack {
+                    Group {
+                        Text("Single animations ⬇️")
+                            .font(.title)
+                        
+                        Button {
+                            liveComments.toggle()
+                        } label: {
+                            HStack(spacing: 8)  {
+                                Image(systemName: liveComments ? "heart.fill" : "heart")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .animate(.liveComments(stamps: 4),
+                                             animate: liveComments)
+                                    .frame(width: 24, height: 24)
+                                    .foregroundColor(.red)
+                                
+                                Text("Like")
+                                    .font(.body)
+                                    .fontWeight(.medium)
+                                    .foregroundColor(.white)
+                            }
+                            .padding(12)
+                            .background(
+                                Rectangle()
+                                    .fill(.blue.opacity(0.8))
+                                    .cornerRadius(12)
+                            )
                         }
-                        .padding(12)
-                        .background(
-                            Rectangle()
-                                .fill(.blue.opacity(0.8))
-                                .cornerRadius(12)
-                        )
+                        
+                        Button {
+                            explosive.toggle()
+                        } label: {
+                            HStack(spacing: 8)  {
+                                Image(systemName: explosive ? "power" : "poweroff")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .animate(.explosive(color: .white),
+                                             animate: explosive)
+                                    .frame(width: 24, height: 24)
+                                    .foregroundColor(.white)
+                                
+                                Text(explosive ? "On" : "Off")
+                                    .font(.body)
+                                    .fontWeight(.medium)
+                                    .foregroundColor(.white)
+                            }
+                            .padding(12)
+                            .background(
+                                Rectangle()
+                                    .fill(.gray.opacity(0.8))
+                                    .cornerRadius(12)
+                            )
+                        }
+                        
+                        Button {
+                            tweak.toggle()
+                        } label: {
+                            HStack(spacing: 8)  {
+                                Image(systemName: tweak ? "hand.thumbsup.fill" : "hand.thumbsup")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .animate(.tweaking(),
+                                             animate: tweak)
+                                    .frame(width: 24, height: 24)
+                                    .foregroundColor(.white)
+                                
+                                Text("Like")
+                                    .font(.body)
+                                    .fontWeight(.medium)
+                                    .foregroundColor(.white)
+                            }
+                            .padding(12)
+                            .background(
+                                Rectangle()
+                                    .fill(.pink.opacity(0.8))
+                                    .cornerRadius(12)
+                            )
+                        }
+                        
+                        Button {
+                            scale.toggle()
+                        } label: {
+                            HStack(spacing: 8)  {
+                                Image(systemName: scale ? "plus.app.fill" : "plus.app")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .animate(.scaling(),
+                                             animate: scale)
+                                    .frame(width: 24, height: 24)
+                                    .foregroundColor(.white)
+                                
+                                Text("Add")
+                                    .font(.body)
+                                    .fontWeight(.medium)
+                                    .foregroundColor(.white)
+                            }
+                            .padding(12)
+                            .background(
+                                Rectangle()
+                                    .fill(.yellow.opacity(0.8))
+                                    .cornerRadius(12)
+                            )
+                        }
+                        
+                        Button {
+                            rotate.toggle()
+                        } label: {
+                            HStack(spacing: 8)  {
+                                Image(systemName: rotate ? "arrow.triangle.2.circlepath.circle.fill" : "arrow.triangle.2.circlepath.circle")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .animate(.rotating,
+                                             animate: rotate)
+                                    .frame(width: 24, height: 24)
+                                    .foregroundColor(.white)
+                                
+                                Text("Sync")
+                                    .font(.body)
+                                    .fontWeight(.medium)
+                                    .foregroundColor(.white)
+                            }
+                            .padding(12)
+                            .background(
+                                Rectangle()
+                                    .fill(.red.opacity(0.6))
+                                    .cornerRadius(12)
+                            )
+                        }
+                        
+                        Button {
+                            fireworks.toggle()
+                        } label: {
+                            HStack(spacing: 8)  {
+                                Image(systemName: fireworks ? "sun.max.fill" : "sun.max")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .animate(.fireworks(color: .white),
+                                             animate: fireworks)
+                                    .frame(width: 24, height: 24)
+                                    .foregroundColor(.white)
+                                
+                                Text("Weather")
+                                    .font(.body)
+                                    .fontWeight(.medium)
+                                    .foregroundColor(.white)
+                            }
+                            .padding(12)
+                            .background(
+                                Rectangle()
+                                    .fill(.orange.opacity(0.6))
+                                    .cornerRadius(12)
+                            )
+                        }
+                        
                     }
                     
-                    Button {
-                        explosive.toggle()
-                    } label: {
-                        HStack(spacing: 8)  {
-                            Image(systemName: explosive ? "power" : "poweroff")
-                                .resizable()
-                                .scaledToFit()
-                                .animate(.explosive(color: .white),
-                                         animate: explosive)
-                                .frame(width: 24, height: 24)
-                                .foregroundColor(.white)
-                            
-                            Text(explosive ? "On" : "Off")
-                                .font(.body)
-                                .fontWeight(.medium)
-                                .foregroundColor(.white)
+                    Group {
+                        Text("Combined animations ⬇️")
+                            .font(.title)
+                        
+                        Button {
+                            liveCommentsAndScale.toggle()
+                        } label: {
+                            HStack(spacing: 8)  {
+                                Image(systemName: liveCommentsAndScale ? "heart.fill" : "heart")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .animate(.scaling(1.5),
+                                             animate: liveCommentsAndScale)
+                                    .animate(.liveComments(stamps: 4),
+                                             animate: liveCommentsAndScale)
+                                    .frame(width: 24, height: 24)
+                                    .foregroundColor(.red)
+                                
+                                Text("Like")
+                                    .font(.body)
+                                    .fontWeight(.medium)
+                                    .foregroundColor(.white)
+                            }
+                            .padding(12)
+                            .background(
+                                Rectangle()
+                                    .fill(.blue.opacity(0.8))
+                                    .cornerRadius(12)
+                            )
                         }
-                        .padding(12)
-                        .background(
-                            Rectangle()
-                                .fill(.gray.opacity(0.8))
-                                .cornerRadius(12)
-                        )
-                    }
-                    
-                    Button {
-                        tweak.toggle()
-                    } label: {
-                        HStack(spacing: 8)  {
-                            Image(systemName: tweak ? "hand.thumbsup.fill" : "hand.thumbsup")
-                                .resizable()
-                                .scaledToFit()
-                                .animate(.tweaking(),
-                                         animate: tweak)
-                                .frame(width: 24, height: 24)
-                                .foregroundColor(.white)
-                            
-                            Text("Like")
-                                .font(.body)
-                                .fontWeight(.medium)
-                                .foregroundColor(.white)
+                        
+                        Button {
+                            doubleExplosive.toggle()
+                        } label: {
+                            HStack(spacing: 8)  {
+                                Image(systemName: doubleExplosive ? "power" : "poweroff")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .animate(.explosive(color: .red.opacity(0.9),
+                                                        factor: 2.5),
+                                             animate: doubleExplosive)
+                                    .animate(.explosive(color: .blue,
+                                                        factor: 1.8),
+                                             animate: doubleExplosive)
+                                    .animate(.explosive(color: .blue.opacity(0.5),
+                                                        factor: 1.4),
+                                             animate: doubleExplosive)
+                                    .frame(width: 24, height: 24)
+                                    .foregroundColor(.white)
+                                
+                                Text(doubleExplosive ? "On" : "Off")
+                                    .font(.body)
+                                    .fontWeight(.medium)
+                                    .foregroundColor(.white)
+                            }
+                            .padding(12)
+                            .background(
+                                Rectangle()
+                                    .fill(.gray.opacity(0.8))
+                                    .cornerRadius(12)
+                            )
                         }
-                        .padding(12)
-                        .background(
-                            Rectangle()
-                                .fill(.pink.opacity(0.8))
-                                .cornerRadius(12)
-                        )
-                    }
-                    
-                    Button {
-                        scale.toggle()
-                    } label: {
-                        HStack(spacing: 8)  {
-                            Image(systemName: scale ? "plus.app.fill" : "plus.app")
-                                .resizable()
-                                .scaledToFit()
-                                .animate(.scaling(),
-                                         animate: scale)
-                                .frame(width: 24, height: 24)
-                                .foregroundColor(.white)
-                            
-                            Text("Add")
-                                .font(.body)
-                                .fontWeight(.medium)
-                                .foregroundColor(.white)
+                        
+                        Button {
+                            tweakAndScale.toggle()
+                        } label: {
+                            HStack(spacing: 8)  {
+                                Image(systemName: tweakAndScale ? "hand.thumbsup.fill" : "hand.thumbsup")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .animate(.scaling(1.2),
+                                             animate: tweakAndScale)
+                                    .animate(.tweaking(),
+                                             animate: tweakAndScale)
+                                    .frame(width: 24, height: 24)
+                                    .foregroundColor(.white)
+                                
+                                Text("Like")
+                                    .font(.body)
+                                    .fontWeight(.medium)
+                                    .foregroundColor(.white)
+                            }
+                            .padding(12)
+                            .background(
+                                Rectangle()
+                                    .fill(.pink.opacity(0.8))
+                                    .cornerRadius(12)
+                            )
                         }
-                        .padding(12)
-                        .background(
-                            Rectangle()
-                                .fill(.yellow.opacity(0.8))
-                                .cornerRadius(12)
-                        )
-                    }
-                    
-                    Button {
-                        rotate.toggle()
-                    } label: {
-                        HStack(spacing: 8)  {
-                            Image(systemName: rotate ? "arrow.triangle.2.circlepath.circle.fill" : "arrow.triangle.2.circlepath.circle")
-                                .resizable()
-                                .scaledToFit()
-                                .animate(.rotating,
-                                         animate: rotate)
-                                .frame(width: 24, height: 24)
-                                .foregroundColor(.white)
-                            
-                            Text("Sync")
-                                .font(.body)
-                                .fontWeight(.medium)
-                                .foregroundColor(.white)
+                        
+                        Button {
+                            scaleAndExplode.toggle()
+                        } label: {
+                            HStack(spacing: 8)  {
+                                Image(systemName: scaleAndExplode ? "plus.app.fill" : "plus.app")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .animate(.scaling(),
+                                             animate: scaleAndExplode)
+                                    .animate(.explosive(color: .white,
+                                                        factor: 2.5),
+                                             animate: scaleAndExplode)
+                                    .frame(width: 24, height: 24)
+                                    .foregroundColor(.white)
+                                
+                                Text("Add")
+                                    .font(.body)
+                                    .fontWeight(.medium)
+                                    .foregroundColor(.white)
+                            }
+                            .padding(12)
+                            .background(
+                                Rectangle()
+                                    .fill(.yellow.opacity(0.8))
+                                    .cornerRadius(12)
+                            )
                         }
-                        .padding(12)
-                        .background(
-                            Rectangle()
-                                .fill(.red.opacity(0.6))
-                                .cornerRadius(12)
-                        )
-                    }
-                    
-                    Button {
-                        fireworks.toggle()
-                    } label: {
-                        HStack(spacing: 8)  {
-                            Image(systemName: fireworks ? "sun.max.fill" : "sun.max")
-                                .resizable()
-                                .scaledToFit()
-                                .animate(.fireworks(color: .white),
-                                         animate: fireworks)
-                                .frame(width: 24, height: 24)
-                                .foregroundColor(.white)
-                            
-                            Text("Weather")
-                                .font(.body)
-                                .fontWeight(.medium)
-                                .foregroundColor(.white)
+                        
+                        Button {
+                            multiple.toggle()
+                        } label: {
+                            HStack(spacing: 8)  {
+                                Image(systemName: multiple ? "sun.max.fill" : "sun.max")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .animate(.rotating,
+                                             animate: multiple)
+                                    .animate(.explosive(color: .red, factor: 2.0),
+                                             animate: multiple)
+                                    .animate(.explosive(color: .blue, factor: 1.4),
+                                             animate: multiple)
+                                    .animate(.fireworks(color: .yellow, factor: 3.0),
+                                             animate: multiple)
+                                    .frame(width: 24, height: 24)
+                                    .foregroundColor(.white)
+                                
+                                Text("Weather")
+                                    .font(.body)
+                                    .fontWeight(.medium)
+                                    .foregroundColor(.white)
+                            }
+                            .padding(12)
+                            .background(
+                                Rectangle()
+                                    .fill(.orange.opacity(0.6))
+                                    .cornerRadius(12)
+                            )
                         }
-                        .padding(12)
-                        .background(
-                            Rectangle()
-                                .fill(.orange.opacity(0.6))
-                                .cornerRadius(12)
-                        )
                     }
-                    
-                }
-                
-                Group {
-                    Text("Combined animations ⬇️")
-                        .font(.title)
-                    
-                    Button {
-                        liveCommentsAndScale.toggle()
-                    } label: {
-                        HStack(spacing: 8)  {
-                            Image(systemName: liveCommentsAndScale ? "heart.fill" : "heart")
-                                .resizable()
-                                .scaledToFit()
-                                .animate(.scaling(1.5),
-                                         animate: liveCommentsAndScale)
-                                .animate(.liveComments(stamps: 4),
-                                         animate: liveCommentsAndScale)
-                                .frame(width: 24, height: 24)
-                                .foregroundColor(.red)
-                            
-                            Text("Like")
-                                .font(.body)
-                                .fontWeight(.medium)
-                                .foregroundColor(.white)
-                        }
-                        .padding(12)
-                        .background(
-                            Rectangle()
-                                .fill(.blue.opacity(0.8))
-                                .cornerRadius(12)
-                        )
-                    }
-                    
-                    Button {
-                        doubleExplosive.toggle()
-                    } label: {
-                        HStack(spacing: 8)  {
-                            Image(systemName: doubleExplosive ? "power" : "poweroff")
-                                .resizable()
-                                .scaledToFit()
-                                .animate(.explosive(color: .red.opacity(0.9),
-                                                    factor: 2.5),
-                                         animate: doubleExplosive)
-                                .animate(.explosive(color: .blue,
-                                                    factor: 1.8),
-                                         animate: doubleExplosive)
-                                .animate(.explosive(color: .blue.opacity(0.5),
-                                                    factor: 1.4),
-                                         animate: doubleExplosive)
-                                .frame(width: 24, height: 24)
-                                .foregroundColor(.white)
-                            
-                            Text(doubleExplosive ? "On" : "Off")
-                                .font(.body)
-                                .fontWeight(.medium)
-                                .foregroundColor(.white)
-                        }
-                        .padding(12)
-                        .background(
-                            Rectangle()
-                                .fill(.gray.opacity(0.8))
-                                .cornerRadius(12)
-                        )
-                    }
-                    
-                    Button {
-                        tweakAndScale.toggle()
-                    } label: {
-                        HStack(spacing: 8)  {
-                            Image(systemName: tweakAndScale ? "hand.thumbsup.fill" : "hand.thumbsup")
-                                .resizable()
-                                .scaledToFit()
-                                .animate(.scaling(1.2),
-                                         animate: tweakAndScale)
-                                .animate(.tweaking(),
-                                         animate: tweakAndScale)
-                                .frame(width: 24, height: 24)
-                                .foregroundColor(.white)
-                            
-                            Text("Like")
-                                .font(.body)
-                                .fontWeight(.medium)
-                                .foregroundColor(.white)
-                        }
-                        .padding(12)
-                        .background(
-                            Rectangle()
-                                .fill(.pink.opacity(0.8))
-                                .cornerRadius(12)
-                        )
-                    }
-                    
-                    Button {
-                        scaleAndExplode.toggle()
-                    } label: {
-                        HStack(spacing: 8)  {
-                            Image(systemName: scaleAndExplode ? "plus.app.fill" : "plus.app")
-                                .resizable()
-                                .scaledToFit()
-                                .animate(.scaling(),
-                                         animate: scaleAndExplode)
-                                .animate(.explosive(color: .white,
-                                                    factor: 2.5),
-                                         animate: scaleAndExplode)
-                                .frame(width: 24, height: 24)
-                                .foregroundColor(.white)
-                            
-                            Text("Add")
-                                .font(.body)
-                                .fontWeight(.medium)
-                                .foregroundColor(.white)
-                        }
-                        .padding(12)
-                        .background(
-                            Rectangle()
-                                .fill(.yellow.opacity(0.8))
-                                .cornerRadius(12)
-                        )
-                    }
-                    
-                    Button {
-                        multiple.toggle()
-                    } label: {
-                        HStack(spacing: 8)  {
-                            Image(systemName: multiple ? "sun.max.fill" : "sun.max")
-                                .resizable()
-                                .scaledToFit()
-                                .animate(.rotating,
-                                         animate: multiple)
-                                .animate(.explosive(color: .red, factor: 2.0),
-                                         animate: multiple)
-                                .animate(.explosive(color: .blue, factor: 1.4),
-                                         animate: multiple)
-                                .animate(.fireworks(color: .yellow, factor: 3.0),
-                                         animate: multiple)
-                                .frame(width: 24, height: 24)
-                                .foregroundColor(.white)
-                            
-                            Text("Weather")
-                                .font(.body)
-                                .fontWeight(.medium)
-                                .foregroundColor(.white)
-                        }
-                        .padding(12)
-                        .background(
-                            Rectangle()
-                                .fill(.orange.opacity(0.6))
-                                .cornerRadius(12)
-                        )
-                    }
-                    
                 }
             }
+            .padding(.top, 50)
             .zIndex(2)
             
         }
         .edgesIgnoringSafeArea(.all)
+    }
+    
+    var forSkeletons: some View {
+        ZStack {
+//            Color.green.opacity(0.2)
+//                .zIndex(1)
+            
+            ScrollView {
+                Group {
+                    Text("Shimmers 👇🏻")
+                    Rectangle()
+                        .fill(Color.blue.opacity(0.2))
+                        .frame(height: 100)
+                        .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
+                        .cornerRadius(20)
+                        .shimmerable()
+                        .padding(20)
+                }
+                
+                Group {
+                    Text("Blinking 👇🏻")
+                    Rectangle()
+                        .fill(Color.blue.opacity(0.2))
+                        .frame(height: 100)
+                        .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
+                        .cornerRadius(20)
+                        .blinking()
+                        .padding(20)
+                }
+                
+                Group {
+                    Text("Combined 👇🏻")
+                    cardSkeleton
+                        .padding(.horizontal, 20)
+                }
+            }
+            .padding(.top, 50)
+            .zIndex(2)
+        }
+        .edgesIgnoringSafeArea(.all)
+    }
+    
+    var cardSkeleton: some View {
+        VStack {
+            HStack {
+                Circle()
+                    .fill(Color.blue.opacity(0.2))
+                    .frame(width: 100)
+                    .blinking()
+                
+                VStack {
+                    Rectangle()
+                        .fill(Color.blue.opacity(0.2))
+                        .frame(height: 30)
+                        .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
+                        .cornerRadius(12)
+                        .padding(.trailing, 40)
+                    Rectangle()
+                        .fill(Color.blue.opacity(0.2))
+                        .frame(height: 30)
+                        .cornerRadius(12)
+                        .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
+                }
+                .shimmerable()
+            }
+            
+            Group {
+                Rectangle()
+                    .fill(Color.blue.opacity(0.2))
+                    .frame(height: 40)
+                    .frame(maxWidth: .infinity)
+                    .cornerRadius(12)
+                
+                Rectangle()
+                    .fill(Color.blue.opacity(0.2))
+                    .frame(height: 40)
+                    .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
+                    .cornerRadius(12)
+                
+                Rectangle()
+                    .fill(Color.blue.opacity(0.2))
+                    .frame(height: 40)
+                    .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
+                    .cornerRadius(12)
+            }
+            .shimmerable()
+        }
     }
 }
 
