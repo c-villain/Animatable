@@ -358,39 +358,54 @@ struct DemoView: View {
     
     var forSkeletons: some View {
         ZStack {
-//            Color.green.opacity(0.2)
-//                .zIndex(1)
+            Color.green.opacity(0.2)
+                .zIndex(1)
             
             ScrollView {
                 Group {
                     Text("Shimmers 👇🏻")
                     Rectangle()
-                        .fill(Color.blue.opacity(0.2))
-                        .frame(height: 100)
+                        .fill(.pink.opacity(0.8))
+                        .frame(height: 80)
                         .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
-                        .cornerRadius(20)
                         .shimmerable()
+                        .cornerRadius(20)
                         .padding(20)
                 }
                 
                 Group {
                     Text("Blinking 👇🏻")
                     Rectangle()
-                        .fill(Color.blue.opacity(0.2))
-                        .frame(height: 100)
+                        .fill(.pink.opacity(0.8))
+                        .frame(height: 80)
                         .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
-                        .cornerRadius(20)
                         .blinking()
+                        .cornerRadius(20)
                         .padding(20)
                 }
                 
                 Group {
                     Text("Combined 👇🏻")
+                    Rectangle()
+                        .fill(.pink.opacity(0.8))
+                        .frame(height: 80)
+                        .frame(maxWidth: .infinity)
+                        .blinking()
+                        .shimmerable()
+                        .cornerRadius(20)
+                        .padding(20)
+                }
+                
+                Group {
+                    Text("Card example 👇🏻")
                     cardSkeleton
                         .padding(.horizontal, 20)
                 }
+                
+                Spacer()
+                    .frame(height: 100)
             }
-            .padding(.top, 50)
+            .padding(.vertical, 70)
             .zIndex(2)
         }
         .edgesIgnoringSafeArea(.all)
@@ -400,46 +415,52 @@ struct DemoView: View {
         VStack {
             HStack {
                 Circle()
-                    .fill(Color.blue.opacity(0.2))
+                    .fill(.pink.opacity(0.8))
                     .frame(width: 100)
                     .blinking()
                 
                 VStack {
                     Rectangle()
-                        .fill(Color.blue.opacity(0.2))
+                        .fill(.pink.opacity(0.8))
                         .frame(height: 30)
                         .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
+                        .shimmerable()
                         .cornerRadius(12)
                         .padding(.trailing, 40)
+                    
                     Rectangle()
-                        .fill(Color.blue.opacity(0.2))
+                        .fill(.pink.opacity(0.8))
                         .frame(height: 30)
+                        .shimmerable()
                         .cornerRadius(12)
                         .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
                 }
-                .shimmerable()
+                
             }
             
             Group {
                 Rectangle()
-                    .fill(Color.blue.opacity(0.2))
+                    .fill(.pink.opacity(0.8))
                     .frame(height: 40)
                     .frame(maxWidth: .infinity)
+                    .shimmerable()
                     .cornerRadius(12)
                 
                 Rectangle()
-                    .fill(Color.blue.opacity(0.2))
+                    .fill(.pink.opacity(0.8))
                     .frame(height: 40)
                     .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
+                    .shimmerable()
                     .cornerRadius(12)
                 
                 Rectangle()
-                    .fill(Color.blue.opacity(0.2))
+                    .fill(.pink.opacity(0.8))
                     .frame(height: 40)
                     .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
+                    .shimmerable()
                     .cornerRadius(12)
             }
-            .shimmerable()
+            
         }
     }
 }
