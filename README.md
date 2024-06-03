@@ -15,6 +15,16 @@ Yet another animation modifiers for buttons, skeletons and other views on pure S
   <img src="Gifs/quick_single.gif" alt="" width="300">
   </p>
 
+<p align="left">
+  <img src="Gifs/skeletons.gif" alt="" width="300">
+  </p>
+
+  ### Demo example for card skeletons
+
+<p align="left">
+  <img src="Gifs/card_skeleton_example.gif" alt="" width="300">
+  </p>
+  
 🔍 Full demo video you can find [here](https://t.me/swiftui_dev/222).
     
 👨🏻‍💻 Feel free to subscribe to channel **[SwiftUI dev](https://t.me/swiftui_dev)** in telegram.
@@ -341,6 +351,69 @@ Button {
     )
 }
   ```
+  </details>
+
+👇🏻 Animation for skeletons and other views.
+
+  <details>
+  <summary>Shimmers</summary>
+  
+  <p align="left">
+<img src="Gifs/shimmer.gif" alt="combined">
+</p>
+
+
+Use sequence of `.shimmerable(configuration:)` where `configuration` is settings for for shimmers or `.shimmerable()` for defaults
+
+```swift
+Rectangle()
+  .fill(.pink.opacity(0.8))
+  .frame(height: 40)
+  .frame(maxWidth: .infinity)
+  .shimmerable()
+  .cornerRadius(12)
+```
+  </details>
+
+<details>
+  <summary>Blinking</summary>
+  
+  <p align="left">
+<img src="Gifs/blinking.gif" alt="combined">
+</p>
+
+
+Use sequence of `.blinking(configuration:)` where `configuration` is settings for for blinking animation or `.blinking()` for defaults
+
+```swift
+Rectangle()
+  .fill(.pink.opacity(0.8))
+  .frame(height: 40)
+  .frame(maxWidth: .infinity)
+  .blinking()
+  .cornerRadius(12)
+```
+  </details>
+
+  <details>
+  <summary>Combining blinking and shimmerable</summary>
+  
+  <p align="left">
+<img src="Gifs/combined_skeleton.gif" alt="combined">
+</p>
+
+Use sequence of `.blinking()` and `.shimmerable()` to get multiple animation effect.
+
+
+```swift
+Rectangle()
+  .fill(.pink.opacity(0.8))
+  .frame(height: 40)
+  .frame(maxWidth: .infinity)
+  .blinking()
+  .shimmerable()
+  .cornerRadius(12)
+```
   </details>
   
 ### ⚠️ Recommendations for use
